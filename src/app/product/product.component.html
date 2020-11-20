@@ -1,0 +1,40 @@
+
+<div class="shopping-cart" >
+    <!-- Title -->
+    <div class="title">
+      Shopping Bag
+    </div>
+    <!-- Product #1 -->
+    <div class="item" *ngFor="let product of products">
+      <div class="buttons">
+        <span class="delete-btn"></span>
+        <span class="like-btn"></span>
+      </div>
+   
+      <div class="image">
+        <img src="assets/images/{{product.photo}}" width="150" height="100">
+      </div>
+   
+      <div class="description">
+        <span>Id:{{product.id}}</span>
+        <span>{{product.name}}</span>
+      </div>
+   
+      <div class="quantity">       
+            <svg width="1.3em" class="plus-btn" type="button" name="button" height="1.5em" viewBox="0 0 16 16" class="bi bi-plus-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+              </svg>
+    
+        <input type="text" name="name" value="1">
+          <svg width="1.3em" height="1.5em" class="minus-btn" type="button" name="button" viewBox="0 0 16 16" class="bi bi-dash-square-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 7.5a.5.5 0 0 0 0 1h7a.5.5 0 0 0 0-1h-7z"/>
+          </svg>
+      </div>
+   
+      <div class="total-price"><P>${{product.price}}</P> </div>
+      <div class="buy">
+          <svg width="5em" height="2.5em"  [routerLink]="['/cart', { id:product.id }]" viewBox="0 0 16 16" class="bi bi-bag" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
+      </svg></div>
+    </div>
+  </div>
